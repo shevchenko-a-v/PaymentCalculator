@@ -24,7 +24,7 @@
     <ClInclude Include="Constants.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CreditInfo.h">
+    <ClInclude Include="Credit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -35,7 +35,7 @@
     <ClCompile Include="PaymentCalculator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CreditInfo.cpp">
+    <ClCompile Include="Credit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
