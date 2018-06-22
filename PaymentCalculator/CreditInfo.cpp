@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include <math.h>
 #include "CreditInfo.h"
+#include "Constants.h"
 
 namespace PaymentCalculator
 {
@@ -16,6 +17,15 @@ namespace PaymentCalculator
 		this->downpayment = downpayment;
 		this->term = term;
 		InitializeCalculatedFields();
+	}
+
+	Json::Value CreditInfo::ToJSON()
+	{
+		Json::Value value;
+		value[Constants::MOUNTHLY_PAYMENT_KEY] = mounthlyPayment;
+		value[Constants::TOTAL_INTEREST_KEY] = totalInterest;
+		value[Constants::TOTAL_PAYMENT_KEY] = totalPayment;
+		return value;
 	}
 
 	void CreditInfo::InitializeCalculatedFields()

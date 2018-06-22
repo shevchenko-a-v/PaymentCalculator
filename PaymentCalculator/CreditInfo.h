@@ -16,6 +16,8 @@ namespace PaymentCalculator
 		inline double GetTotalInterest() { return totalInterest; }
 		inline double GetTotalPayment() { return totalPayment; }
 
+		Json::Value ToJSON();
+
 	private:
 		void InitializeCalculatedFields();
 
