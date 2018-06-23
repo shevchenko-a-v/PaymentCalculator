@@ -12,7 +12,7 @@ namespace PaymentCalculator
 		// term [years]
 		Credit(double amount, double interest, double downpayment, double term);
 		
-		Json::Value ToJSON() const;
+		Json::Value GetCalculatedParametersAsJSON() const;
 
 	private:
 		// Calculates MounthlyPayment, TotalInterest and TotalPayment
@@ -23,7 +23,7 @@ namespace PaymentCalculator
 		double _interest;
 		double _downpayment;
 		double _term;
-		// calculable fields
+		// calculated fields
 		double _monthlyPayment;
 		double _totalInterest;
 		double _totalPayment;

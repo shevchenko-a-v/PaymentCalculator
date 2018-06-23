@@ -9,8 +9,8 @@ namespace PaymentCalculator
 	{
 		if (downpayment >= amount)
 			throw std::invalid_argument("Downpayment must be less than amount of credit.");
-		if (downpayment < 0 || amount < 0 || interest < 0 || term < 0)
-			throw std::invalid_argument("All credit parameters must be non-negative.");
+		if (downpayment < 0 || amount <= 0 || interest <= 0 || term <= 0)
+			throw std::invalid_argument("All credit parameters must be greater than zero except downpayment which can be zero.");
 
 		this->_amount = amount;
 		this->_interest = interest;
@@ -19,7 +19,7 @@ namespace PaymentCalculator
 		InitializeCalculatedFields();
 	}
 
-	Json::Value Credit::ToJSON() const
+	Json::Value Credit::GetCalculatedParametersAsJSON() const
 	{
 		Json::Value value;
 		value[Constants::MONTHLY_PAYMENT_KEY] = _monthlyPayment;
